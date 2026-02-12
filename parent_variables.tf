@@ -1,5 +1,0 @@
-# variable "aws_profile" {}
-
-variable "bucket_name" {
-    description = "Name of S3 bucket."
-}

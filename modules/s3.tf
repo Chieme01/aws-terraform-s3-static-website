@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "s3_bucket" {
+resource "aws_s3_bucket" "website_bucket" {
   bucket = var.bucket_name
   force_destroy = var.force_destroy
 
@@ -9,17 +9,17 @@ resource "aws_s3_bucket" "s3_bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "s3_public_access_setting" {
-  bucket = aws_s3_bucket.s3_bucket.id
+  bucket = aws_s3_bucket.website_bucket.id
 
   block_public_policy     = false
   restrict_public_buckets = false
 }
 
 resource "aws_s3_bucket_website_configuration" "s3_website_configuration" {
-  bucket = aws_s3_bucket.s3_bucket.id
+  bucket = aws_s3_bucket.website_bucket.id
 
   index_document {
-    suffix = "index.html"
+    suffix = var.default_index_document
   }
 
   # error_document {
@@ -38,7 +38,7 @@ resource "aws_s3_bucket_website_configuration" "s3_website_configuration" {
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
-  bucket = aws_s3_bucket.s3_bucket.id
+  bucket = aws_s3_bucket.website_bucket.id
   policy = data.aws_iam_policy_document.allow_public_access.json
   depends_on = [ aws_s3_bucket_public_access_block.s3_public_access_setting ]
 }
@@ -57,7 +57,7 @@ data "aws_iam_policy_document" "allow_public_access" {
     ]
 
     resources = [
-      "${aws_s3_bucket.s3_bucket.arn}/*",
+      "${aws_s3_bucket.website_bucket.arn}/*",
     ]
   }
 }
