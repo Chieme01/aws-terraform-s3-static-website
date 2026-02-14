@@ -31,3 +31,11 @@ variable "distribution_aliases" {
     type = list(string)
     default = null
 }
+
+variable "cache_policy_id" {
+  description = "Unique identifier of the cache policy that is attached to the cache behavior."
+  # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html
+  default = "658327ea-f89d-4fab-a63d-7e88639e58f6" # CachingOptimized managed cache policy
+  # "4135ea2d-6df8-44a3-9df3-4b5a84be39ad" #CachingDisabled managed cache policy.
+  # "658327ea-f89d-4fab-a63d-7e88639e58f6" #CachingOptimized managed cache policy.
+}
