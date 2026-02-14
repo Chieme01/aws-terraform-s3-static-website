@@ -27,7 +27,7 @@ resource "aws_s3_object" "object_statement" {
   bucket = module.static-website.bucket_id
   key    = "statement.html"
   source = "./html/statement.html"
-  etag = filemd5("./html/index.html")
+  etag = filemd5("./html/statement.html")
   content_type = "text/html; charset=utf-8"
   depends_on = [ module.static-website ]
 }

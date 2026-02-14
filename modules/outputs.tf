@@ -1,9 +1,9 @@
 output "website_endpoint" {
-  value = aws_s3_bucket_website_configuration.s3_website_configuration.website_endpoint
+  value = local.origin
 }
 
 output "website_domain" {
-  value = aws_s3_bucket_website_configuration.s3_website_configuration.website_domain
+  value = local.bucket_domain
 }
 
 output "bucket_id" {

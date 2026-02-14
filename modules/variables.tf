@@ -48,3 +48,8 @@ variable "distribution_aliases" {
 variable "registered_root_domain" {
     description = ""
 }
+
+variable "block_public_website_access" {
+    default = true
+    type = bool
+}
