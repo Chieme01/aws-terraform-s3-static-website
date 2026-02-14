@@ -37,7 +37,7 @@ resource "aws_s3_bucket_website_configuration" "s3_website_configuration" {
   # }
 }
 
-resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
+resource "aws_s3_bucket_policy" "website_bucket_policy" {
   bucket = aws_s3_bucket.website_bucket.id
   policy = data.aws_iam_policy_document.allow_public_access.json
   depends_on = [ aws_s3_bucket_public_access_block.s3_public_access_setting ]
