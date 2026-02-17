@@ -3,7 +3,7 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.0"
-      configuration_aliases = [ aws.east ]
+      configuration_aliases = [ aws.east ] #Requires root module to have and pass this provider alias.
     }
   }
 }

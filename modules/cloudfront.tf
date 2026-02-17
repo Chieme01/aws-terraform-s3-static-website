@@ -1,3 +1,11 @@
+resource "aws_cloudfront_origin_access_control" "oac" {
+  name                              = "cloudfront-oac"
+  description                       = "Prevent public from bypassing cloudfront and accessing origin directly"
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
+}
+
 resource "aws_cloudfront_distribution" "s3_distribution" {
   aliases             = var.distribution_aliases
   comment             = null
@@ -28,25 +36,25 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     realtime_log_config_arn    = null
     response_headers_policy_id = null
     smooth_streaming           = false
-    target_origin_id           = aws_s3_bucket_website_configuration.s3_website_configuration.website_endpoint
+    target_origin_id           = local.origin
     trusted_signers            = []
     viewer_protocol_policy     = "redirect-to-https"
   }
   origin {
     connection_attempts      = 3
     connection_timeout       = 10
-    domain_name              = aws_s3_bucket_website_configuration.s3_website_configuration.website_endpoint
-    origin_access_control_id = null
-    origin_id                = aws_s3_bucket_website_configuration.s3_website_configuration.website_endpoint
+    domain_name              = local.origin
+    origin_access_control_id = aws_cloudfront_origin_access_control.oac.id
+    origin_id                = local.origin
     origin_path              = null
-    custom_origin_config {
-      http_port                = 80
-      https_port               = 443
-      origin_keepalive_timeout = 5
-      origin_protocol_policy   = "http-only"
-      origin_read_timeout      = 30
-      origin_ssl_protocols     = ["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
-    }
+    # custom_origin_config {
+    #   http_port                = 80
+    #   https_port               = 443
+    #   origin_keepalive_timeout = 5
+    #   origin_protocol_policy   = "http-only"
+    #   origin_read_timeout      = 30
+    #   origin_ssl_protocols     = ["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
+    # }
   }
   restrictions {
     geo_restriction {
@@ -55,10 +63,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     }
   }
   viewer_certificate {
-    acm_certificate_arn            = aws_acm_certificate_validation.cert_verify.certificate_arn #null
+    acm_certificate_arn            = aws_acm_certificate_validation.cert_verify.certificate_arn
     cloudfront_default_certificate = false #true
     iam_certificate_id             = null
     minimum_protocol_version       = "TLSv1.2_2021" #"TLSv1"
-    ssl_support_method             = "sni-only" #null
+    ssl_support_method             = "sni-only"
   }
 }

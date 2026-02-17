@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Chieme Emenyonu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f1f5f9; color: #334155; }
+        .resume-container { background-color: #ffffff; border: 1px solid #e2e8f0; }
+        .section-title { color: #0369a1; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+    </style>
+</head>
+<body class="py-12 px-6">
+
+    <div class="max-w-4xl mx-auto resume-container shadow-lg rounded-xl overflow-hidden">
+        <header class="bg-slate-50 p-10 border-b border-slate-200">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div>
+                    <h1 class="text-4xl font-black text-slate-900 uppercase tracking-tighter">Chieme Emenyonu</h1>
+                    <p class="text-sky-600 font-bold mt-2">Senior Cloud Infrastructure Engineer</p>
+                </div>
+                <div class="mt-4 md:mt-0 md:text-right text-sm text-slate-500">
+                    <p>(916) 738-5460</p>
+                    <p>kenyonuc@gmail.com</p>
+                    <p>linkedin.com/in/chieme-emenyonu</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="p-10 space-y-12">
+            <section>
+                <h2 class="section-title">Career Summary</h2>
+                <p>Senior Cloud Infrastructure Engineer with over 7 years of experience and a proven track record of ownership over end-to-end cloud lifecycles, specializing in Cloud, DevOps, Reliability, Observability, and Security. Known for driving innovation through automation, infrastructure as code, and modern container platforms. I excel in collaboration within cross-functional teams to design and implement highly secure, scalable, and compliant infrastructure that meets industry standards and frameworks.</p>
+            </section>
+
+            <section>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
+                    <p><strong class="text-slate-900">Languages:</strong> Python programming, Bash scripting, SQL</p>
+                    <p><strong class="text-slate-900">Cloud Engineering:</strong> AWS and Azure</p>
+                    <p><strong class="text-slate-900">Infrastructure as Code:</strong> Terraform, CloudFormation, Bicep</p>
+                    <p><strong class="text-slate-900">Containers:</strong> Kubernetes (AKS), Docker</p>
+                    <p><strong class="text-slate-900">Monitoring & Observability:</strong> Splunk, Prometheus, Grafana, Datadog</p>
+                    <p><strong class="text-slate-900">Security:</strong> Encryption, RBAC, PCI, HIPAA</p>
+                    <p><strong class="text-slate-900">OS & Management:</strong> Linux System Administration, Git version control, Project Management</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="mb-10">
+                    <div class="flex justify-between font-bold text-slate-900 mb-2">
+                        <span>Senior Cloud Engineer | United Health Group</span>
+                        <span>March 2022 – present</span>
+                    </div>
+                    <ul class="list-disc ml-5 space-y-2 text-sm text-slate-600">
+                        <li>Directed the full-scale lifecycle of the Golden AMI Pipeline, saving over 1600 engineering hours annually while improving security.</li>
+                        <li>Migrated legacy web applications from Azure Web Apps to Azure Kubernetes Service (AKS) using Bicep/ARM and automated end-to-end deployments via Azure DevOps CI/CD pipelines.</li>
+                        <li>Hardened cluster security by integrating Azure Key Vault to manage sensitive environment variables and zero-trust secret management.</li>
+                        <li>Architected high-availability infrastructure incorporating Route 53, auto-scaling, and blue-green deployment strategies, increasing uptime to 99.95%.</li>
+                        <li>Deployed and maintained Enterprise Applications including Hashicorp Vault and Terraform Enterprise, managing backend RDS PostgreSQL, KMS keys, and SSL/TLS certificates.</li>
+                        <li>Built real-time data analytics pipelines using Kinesis Data Firehose, Athena, and QuickSight to avoid RDS MySQL latency.</li>
+                        <li>Mentored and upskilled junior engineers on complex architectures, reducing production incident resolution time by 20%.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-10">
+                    <div class="flex justify-between font-bold text-slate-900 mb-2">
+                        <span>Cloud Engineer | California College Guidance Initiative</span>
+                        <span>June 2020 – February 2022</span>
+                    </div>
+                    <ul class="list-disc ml-5 space-y-2 text-sm text-slate-600">
+                        <li>Orchestrated CI/CD pipelines using AWS CodePipeline with GitHub, CodeBuild, and CodeDeploy to promote quicker, reliable innovations.</li>
+                        <li>Implemented enterprise-wide centralized logging and aggregation solutions using Splunk, CloudWatch, Kinesis Firehose, Glue, and S3.</li>
+                        <li>Orchestrated a data pipeline for analysis and synchronization of Salesforce data with Snowflake leveraging Python, Appflow, Docker, ECS Fargate, and Lambda.</li>
+                        <li>Provided observability using Prometheus to monitor container metrics and Grafana for analysis and dashboard visualization.</li>
+                        <li>Managed API version upgrades with minimal downtime using API Gateway stages and canary deployments.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="flex justify-between font-bold text-slate-900 mb-2">
+                        <span>Systems Administrator | K.C Family Care, Inc.</span>
+                        <span>April 2017 – May 2020</span>
+                    </div>
+                    <ul class="list-disc ml-5 space-y-2 text-sm text-slate-600">
+                        <li>Deployed Active Directory with automated creation of users and groups to secure SFTP server access leveraging PowerShell and LDAP.</li>
+                        <li>Automated Virtual Machine patching using Azure Update Management to ensure timely maintenance.</li>
+                        <li>Implemented disaster recovery and backup strategies using Azure Backup and Azure Site Recovery.</li>
+                        <li>Utilized Git for version control to effectively plan and execute the release of updates and features.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="space-y-4 text-sm text-slate-700">
+                    <p><strong>MS Information Technology & Data Science</strong> (In-progress: 2025 – 2027) | California State University Fullerton</p>
+                    <p><strong>B.Eng. Electrical & Electronic Engineering</strong> (2007 – 2013) | Madonna University</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700">
+                    <p>• AWS Certified DevOps Engineer – Professional</p>
+                    <p>• Certified Kubernetes Administrator (CKA)</p>
+                    <p>• Hashicorp Certified Terraform Associate</p>
+                    <p>• Microsoft Certified Azure Administrator Associate</p>
+                    <p>• AWS Certified Solutions Architect Associate</p>
+                    <p>• AWS Certified Developer Associate</p>
+                    <p>• Python Programming – University of Toronto</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Interests</h2>
+                <p class="text-sm text-slate-600">Charity | Formula 1 | Soccer | Cooking | Jogging | Gym & Fitness</p>
+            </section>
+        </div>
+        
+        <footer class="bg-slate-50 p-6 text-center text-xs text-slate-400">
+            All components were designed and built by Chieme Emenyonu
+        </footer>
+    </div>
+    <div class="mt-8 text-center"><a href="index.html" class="text-sky-700 hover:underline">← Return to Portfolio Home</a></div>
+</body>
+</html>
