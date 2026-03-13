@@ -9,11 +9,24 @@
         body { background-color: #f1f5f9; color: #334155; }
         .resume-container { background-color: #ffffff; border: 1px solid #e2e8f0; }
         .section-title { color: #0369a1; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+        .btn-action { transition: all 0.2s; display: inline-flex; align-items: center; font-weight: 600; font-size: 0.875 m; }
     </style>
 </head>
 <body class="py-12 px-6">
 
     <div class="max-w-4xl mx-auto resume-container shadow-lg rounded-xl overflow-hidden">
+        <div class="bg-white border-b border-slate-100 p-4 flex flex-wrap gap-4 justify-between items-center">
+            <a href="index.html" class="btn-action text-slate-600 hover:text-sky-700">
+                <span class="mr-2">←</span> Return to Portfolio Home
+            </a>
+            <a href="chieme_resume.pdf" 
+               download="Chieme_Emenyonu_Resume"
+               class="btn-action bg-sky-700 text-white px-4 py-2 rounded-lg hover:bg-sky-800 shadow-sm">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download Resume (PDF)
+            </a>
+        </div>
+
         <header class="bg-slate-50 p-10 border-b border-slate-200">
             <div class="flex flex-col md:flex-row justify-between items-start">
                 <div>
@@ -68,7 +81,7 @@
 
                 <div class="mb-10">
                     <div class="flex justify-between font-bold text-slate-900 mb-2">
-                        <span>Cloud Engineer | California College Guidance Initiative</span>
+                        <span>Cloud Engineer | Uber</span>
                         <span>June 2020 – February 2022</span>
                     </div>
                     <ul class="list-disc ml-5 space-y-2 text-sm text-slate-600">
@@ -125,6 +138,16 @@
             All components were designed and built by Chieme Emenyonu
         </footer>
     </div>
-    <div class="mt-8 text-center"><a href="index.html" class="text-sky-700 hover:underline">← Return to Portfolio Home</a></div>
+
+    <div class="mt-8 flex flex-col items-center gap-4">
+        <a href="chieme_resume.pdf" 
+           download="Chieme_Emenyonu_Resume"
+           class="text-sky-700 font-bold hover:text-sky-900 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download Resume (PDF)
+        </a>
+        <a href="index.html" class="text-slate-500 hover:text-sky-700 hover:underline">← Return to Portfolio Home</a>
+    </div>
+
 </body>
 </html>

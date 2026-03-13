@@ -15,7 +15,7 @@ module "static-website" {
     }
 }
 
-resource "aws_s3_object" "object" {
+resource "aws_s3_object" "index_object" {
   bucket = module.static-website.bucket_id
   key    = "index.html"
   source = "./html/index.html"
@@ -24,11 +24,22 @@ resource "aws_s3_object" "object" {
   depends_on = [ module.static-website ]
 }
 
-resource "aws_s3_object" "resume_object" {
+resource "aws_s3_object" "resume_page_object" {
   bucket = module.static-website.bucket_id
   key    = "resume.html"
   source = "./html/resume.html"
   etag = filemd5("./html/resume.html")
   content_type = "text/html; charset=utf-8"
   depends_on = [ module.static-website ]
+}
+
+resource "aws_s3_object" "resume_file_object" {
+  bucket       = module.static-website.bucket_id
+  # The 'key' is how the file will be named in the S3 bucket
+  key          = "chieme_resume.pdf"
+  source       = "C:/Users/Kenyo/OneDrive/Documents/Job hunt/Chieme's Resume - Infrastructure Engineer.pdf"
+  etag         = filemd5("C:/Users/Kenyo/OneDrive/Documents/Job hunt/Chieme's Resume - Infrastructure Engineer.pdf")
+  content_type = "application/pdf"
+  
+  depends_on   = [ module.static-website ]
 }

@@ -68,25 +68,25 @@
         <p class="text-slate-600 mb-10">A deepeer dive into the serverless backend infrastructure powering this portfolio.</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass p-6 rounded-2xl border-t-4 border-orange-500 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-slate-800">S3 Bucket</h3>
-                <p class="text-sm text-slate-600">Houses static assets with 99.999999999% durability. Configured for static hosting with public access disabled.</p>
-            </div>
-            <div class="glass p-6 rounded-2xl border-t-4 border-purple-500 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-slate-800">Origin Access Control</h3>
-                <p class="text-sm text-slate-600">Secures the S3 origin by ensuring only CloudFront can access the bucket contents, preventing direct bypass of the CDN.</p>
-            </div>
-            <div class="glass p-6 rounded-2xl border-t-4 border-green-500 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-slate-800">AWS Certificate Manager</h3>
-                <p class="text-sm text-slate-600">Automates provisioning and renewal of SSL/TLS certificates for end-to-end encryption via HTTPS.</p>
+            <div class="glass p-6 rounded-2xl border-t-4 border-red-500 shadow-sm">
+                <h3 class="font-bold text-lg mb-2 text-slate-800">Route 53 (DNS)</h3>
+                <p class="text-sm text-slate-600">Scalable cloud DNS management that routes traffic to the CloudFront distribution using Alias records.</p>
             </div>
             <div class="glass p-6 rounded-2xl border-t-4 border-blue-500 shadow-sm">
                 <h3 class="font-bold text-lg mb-2 text-slate-800">CloudFront (CDN)</h3>
                 <p class="text-sm text-slate-600">A global edge network that caches content close to users, reducing latency and offloading traffic.</p>
             </div>
-            <div class="glass p-6 rounded-2xl border-t-4 border-red-500 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-slate-800">Route 53 (DNS)</h3>
-                <p class="text-sm text-slate-600">Scalable cloud DNS management that routes traffic to the CloudFront distribution using Alias records.</p>
+            <div class="glass p-6 rounded-2xl border-t-4 border-green-500 shadow-sm">
+                <h3 class="font-bold text-lg mb-2 text-slate-800">AWS Certificate Manager</h3>
+                <p class="text-sm text-slate-600">Automates provisioning and renewal of SSL/TLS certificates for end-to-end encryption via HTTPS.</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-t-4 border-purple-500 shadow-sm">
+                <h3 class="font-bold text-lg mb-2 text-slate-800">Origin Access Control</h3>
+                <p class="text-sm text-slate-600">Secures the S3 origin by ensuring only CloudFront can access the bucket contents, preventing direct bypass of the CDN.</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-t-4 border-orange-500 shadow-sm">
+                <h3 class="font-bold text-lg mb-2 text-slate-800">S3 Bucket</h3>
+                <p class="text-sm text-slate-600">Houses static assets with 99.999999999% durability. Configured for static hosting with public access disabled.</p>
             </div>
         </div>
     </section>
