@@ -12,14 +12,25 @@
         .accent-gradient { background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); }
         .card-hover:hover { transform: translateY(-5px); border-color: #38bdf8; background-color: #ffffff; transition: all 0.3s ease; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
         
-        /* Unified Header Style - Light Mode */
         .hero-title { 
             font-size: 3rem; 
             font-weight: 400; 
             line-height: 1.2; 
-            color: #0284c7; /* Darker sky blue for readability on light bg */
+            color: #0284c7; 
             letter-spacing: -0.02em;
         }
+
+        .project-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
         @media (max-width: 768px) {
             .hero-title { font-size: 2rem; }
         }
@@ -29,8 +40,8 @@
 
     <section class="relative py-24 px-6 overflow-hidden accent-gradient">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h1 class="hero-title mb-4">Chieme | Architecting the Cloud</h1>
-            <p class="text-xl md:text-2xl font-light text-slate-500">Building Reliable Futures</p>
+            <h1 class="hero-title mb-4">Chieme Emenyonu</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-500">Architecting the Cloud & Building Reliable Futures</p>
         </div>
     </section>
 
@@ -64,8 +75,92 @@
     </section>
 
     <section class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold mb-2 text-slate-900">The Chieme Framework</h2>
-        <p class="text-slate-600 mb-10">A deepeer dive into the serverless backend infrastructure powering this portfolio.</p>
+        <h2 class="text-3xl font-bold mb-2 text-slate-900">Portfolio Projects</h2>
+        <p class="text-slate-600 mb-10">Production-ready infrastructure implementations and automation labs.</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <a href="https://github.com/Chieme01/azure-terraform-kubernetes-lab" target="_blank" class="glass p-6 rounded-2xl card-hover border-t-4 border-blue-500 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fab fa-microsoft text-2xl text-blue-500"></i>
+                        <i class="fas fa-external-link-alt text-slate-300 text-xs"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800">Terraform Kubernetes Lab</h3>
+                    <p class="text-xs text-slate-600 mb-6">Provisions an AKS cluster on Azure via Terraform, covering networking, RBAC, and full IaC configuration from scratch.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="project-badge">Azure</span>
+                    <span class="project-badge">Terraform</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/Chieme01/azure-bicep-devops-aks" target="_blank" class="glass p-6 rounded-2xl card-hover border-t-4 border-purple-500 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-code-branch text-2xl text-purple-500"></i>
+                        <i class="fas fa-external-link-alt text-slate-300 text-xs"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800">Bicep DevOps AKS</h3>
+                    <p class="text-xs text-slate-600 mb-6">GitOps-driven AKS deployment using Azure Bicep templates wired into a full Azure DevOps CI/CD pipeline.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="project-badge">Bicep</span>
+                    <span class="project-badge">CI/CD</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/Chieme01/aws-terraform-api-gateway" target="_blank" class="glass p-6 rounded-2xl card-hover border-t-4 border-orange-500 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fab fa-aws text-2xl text-orange-500"></i>
+                        <i class="fas fa-external-link-alt text-slate-300 text-xs"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800">Terraform API Gateway</h3>
+                    <p class="text-xs text-slate-600 mb-6">Serverless REST API built with Terraform, utilizing API Gateway, Lambda, and IAM roles defined entirely as code.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="project-badge">AWS</span>
+                    <span class="project-badge">Serverless</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/Chieme01/aws-terraform-s3-static-website" target="_blank" class="glass p-6 rounded-2xl card-hover border-t-4 border-green-500 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-globe text-2xl text-green-500"></i>
+                        <i class="fas fa-external-link-alt text-slate-300 text-xs"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800">S3 Static Website</h3>
+                    <p class="text-xs text-slate-600 mb-6">Full static hosting stack automated via Terraform, utilizing S3, CloudFront, and Route 53 with secure OAC locking.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="project-badge">S3</span>
+                    <span class="project-badge">CloudFront</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/Chieme01/docker-pipeline" target="_blank" class="glass p-6 rounded-2xl card-hover border-t-4 border-teal-500 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fab fa-docker text-2xl text-teal-500"></i>
+                        <i class="fas fa-external-link-alt text-slate-300 text-xs"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800">Docker Pipeline</h3>
+                    <p class="text-xs text-slate-600 mb-6">Automated containerised CI/CD pipeline that builds, tests, and pushes Docker images through staged workflows.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="project-badge">Docker</span>
+                    <span class="project-badge">GitHub Actions</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold mb-2 text-slate-900">The backend</h2>
+        <p class="text-slate-600 mb-10">A deeper dive into the serverless backend infrastructure powering this website.</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="glass p-6 rounded-2xl border-t-4 border-red-500 shadow-sm">
